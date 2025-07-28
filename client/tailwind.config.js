@@ -6,6 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
       colors: {
         primary: {
           50: '#f0f9ff',
@@ -25,7 +34,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
-    }
+    },
   },
   plugins: [],
 }
