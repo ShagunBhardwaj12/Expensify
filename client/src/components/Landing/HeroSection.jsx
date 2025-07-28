@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Star, Play, X } from 'lucide-react';
-import { sendOtp } from '../../services/authAPI';
+import { sendOTP } from '../../services/authAPI';
 
 const HeroSection = () => {
   const [emailOrPhone, setEmailOrPhone] = useState("");
@@ -15,7 +15,7 @@ const HeroSection = () => {
     }
 
     try {
-      const res = await sendOtp(emailOrPhone);
+      const res = await sendOTP(emailOrPhone);
       alert(res.message || "OTP sent successfully!");
       setShowOtpModal(true);
     } catch (error) {

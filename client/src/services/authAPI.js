@@ -1,7 +1,7 @@
 // client/src/services/authAPI.js
 const BASE_URL = "http://localhost:5000/api/auth";
 
-export const sendOtp = async (email) => {
+export const sendOTP = async (email) => {
   const response = await fetch(`${BASE_URL}/send-otp`, {
     method: "POST",
     headers: {
