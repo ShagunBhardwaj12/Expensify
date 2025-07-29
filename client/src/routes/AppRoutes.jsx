@@ -12,16 +12,17 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/login" element={<Login />} />
-
-      {/* Nest all dashboard children under Dashboard layout */}
-      <Route path="/dashboard" element={<Dashboard />}>
-        <Route index element={<Inbox />} />
-        <Route path="inbox" element={<Inbox />} />
-        <Route path="reports" element={<Reports />} />
-        <Route path="workspaces" element={<Workspace />} />
-        <Route path="account" element={<Account />} />
-      </Route>
-
+      
+      {/* Dashboard routes - all under /dashboard */}
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard/inbox" element={<Inbox />} />
+      <Route path="/dashboard/reports" element={<Reports />} />
+      <Route path="/dashboard/workspaces" element={<Workspace />} />
+      <Route path="/dashboard/account" element={<Account />} />
+      
+      {/* Redirect /dashboard to /dashboard/inbox by default */}
+      <Route path="/dashboard" element={<Navigate to="/dashboard/inbox" replace />} />
+      
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );

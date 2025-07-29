@@ -84,7 +84,7 @@ import { useState } from "react";
 import { sendOTP, verifyOTP } from "../services/authAPI";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import dashboard from "./Dashboard"
+
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
